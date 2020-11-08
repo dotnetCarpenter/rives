@@ -23,7 +23,9 @@ noOfAddresses=$(echo $result | jq '.adresser | length')
 # echo ${#adresses[@]}
 
 if [ $noOfAddresses -eq 0 ]; then
-	echo "Intet fundet"
+	echo "Intet fundet for $@"
+	echo "Prøv at skrive i ASCII"
 else
-	echo $result | jq .adresser
+	# echo $result | jq '.adresser[] | [.adressetekst, .kommunenavn]'
+	echo $result | jq '.adresser[] | [.kommunenummer, .gardsnummer, .bruksnummer] | @sh'
 fi
