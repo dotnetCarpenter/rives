@@ -12,4 +12,4 @@ fi
 
 url="https://seeiendom.kartverket.no/api/bygningerForMatrikkelenhet$(printf '/%s' "${input[@]}")"
 
-echo $(curl -s $url) | jq '.[] | select(.sefrak == true and (.status | contains("riving")))'
+echo $(curl -s $url) | jq '.[] | select(.status | contains("riving"))'

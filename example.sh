@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-./address.sh Anders Buens gate | parallel ./matrikkelenhetID.sh | parallel ./status.sh
+[[ -z $@ ]] && address="Anders Buens gate" || address=$@
+
+./address.sh $address | parallel ./matrikkelenhetID.sh | parallel ./status.sh
