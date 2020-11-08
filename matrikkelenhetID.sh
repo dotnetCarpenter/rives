@@ -17,6 +17,7 @@ fi
 # curl -s "https://seeiendom.kartverket.no/api/matrikkelenhet/5001/411/146"
 
 # echo ${#input[@]}
+# exit
 
 url="https://seeiendom.kartverket.no/api/matrikkelenhet$(printf '/%s' "${input[@]}")"
 

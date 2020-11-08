@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 
-./address.sh Anders Buens gate 7A | ./matrikkelenhetID.sh | ./status.sh
+./address.sh Anders Buens gate | parallel ./matrikkelenhetID.sh | parallel ./status.sh
